@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 
+# plugins template admin lte
+/public/plugins/
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
