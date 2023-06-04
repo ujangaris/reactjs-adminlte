@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Dashboard from './components/pages/dashboard/Index'
+import Role from './components/pages/role/Index'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Dashboard />} />
               <Route path='/users' element={<ListUser />} />
+              <Route path='/Roles' element={<Role />} />
             </Routes>
 
             {/* <!-- /.content --> */}

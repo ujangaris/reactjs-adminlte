@@ -29,7 +29,7 @@ const Sidebar = () => {
             </div>
             <div className='info'>
               <a href='#' className='d-block'>
-                Alexander Pierce
+                M.Alif Bagas Arnov
               </a>
             </div>
           </div>

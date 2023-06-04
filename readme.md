@@ -29,7 +29,7 @@
     todo:
 
     1.  App.jsx
-        - import dan papasang Dashboard
+        - import dan pasang Dashboard
     2.  pages/dashboard/Index.jsx
         - Content Dashboard
     3.  components/Sidebar.jsx
@@ -37,4 +37,19 @@
     4.  pengujian pada browser:
         - npm run dev
         - klik Dashboard
+            http://127.0.0.1:5173
+
+## Role Page
+
+    todo:
+
+    1.  App.jsx
+        - import dan pasang Role
+    2.  pages/role/Index.jsx
+        - Content Role
+    3.  components/Sidebar.jsx
+        - Link to role
+    4.  pengujian pada browser:
+        - npm run dev
+        - klik Role
             http://127.0.0.1:5173

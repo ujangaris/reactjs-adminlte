@@ -134,7 +134,7 @@ const Dashboard = () => {
                   <td>2023-06-05 20:02:35</td>
                   <td className='text-center'>
                     <a className='btn btn-primary btn-sm mx-1' href='#'>
-                      <i className='fas fa-eye'></i>
+                      <i className='fas fa-eye mx-1'></i>
                       View
                     </a>
                   </td>
@@ -161,8 +161,8 @@ const Dashboard = () => {
                   <td>alex@gmail.com</td>
                   <td>2023-06-05 20:02:35</td>
                   <td className='text-center'>
-                    <a className='btn btn-primary btn-sm' href='#'>
-                      <i className='fas fa-eye'></i>
+                    <a className='btn btn-primary btn-sm mx-1' href='#'>
+                      <i className='fas fa-eye mx-1'></i>
                       View
                     </a>
                   </td>
@@ -189,8 +189,8 @@ const Dashboard = () => {
                   <td>bob@gmail.com</td>
                   <td>2023-06-05 20:02:35</td>
                   <td className='text-center'>
-                    <a className='btn btn-primary btn-sm' href='#'>
-                      <i className='fas fa-eye'></i>
+                    <a className='btn btn-primary btn-sm mx-1' href='#'>
+                      <i className='fas fa-eye mx-1'></i>
                       View
                     </a>
                   </td>
@@ -217,8 +217,8 @@ const Dashboard = () => {
                   <td>miki@gmail.com</td>
                   <td>2023-06-05 20:02:35</td>
                   <td className='text-center'>
-                    <a className='btn btn-primary btn-sm' href='#'>
-                      <i className='fas fa-eye'></i>
+                    <a className='btn btn-primary btn-sm mx-1' href='#'>
+                      <i className='fas fa-eye mx-1'></i>
                       View
                     </a>
                   </td>
