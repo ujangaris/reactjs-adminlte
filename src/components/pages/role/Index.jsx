@@ -8,7 +8,7 @@ const Role = () => {
         <div className='container-fluid'>
           <div className='row mb-2'>
             <div className='col-sm-6'>
-              <h1 className='m-0'>Role</h1>
+              <h1 className='m-0'>All Roles</h1>
             </div>
             {/* <!-- /.col --> */}
             <div className='col-sm-6'>
@@ -33,12 +33,13 @@ const Role = () => {
         <div className='card'>
           <div className='card-header'>
             <div className='card-title'>
-              <button
+              <Link
+                to='/create-role'
                 type='button'
                 className='btn btn-block btn-success btn-sm'
               >
                 Add Role <span className='fas fa-plus'></span>
-              </button>
+              </Link>
             </div>
 
             <div className='card-tools'>
@@ -68,7 +69,6 @@ const Role = () => {
                 <tr>
                   <th>ID</th>
                   <th>Name</th>
-                  <th>Role</th>
                   <th>Created At</th>
                   <th>Action</th>
                 </tr>
@@ -78,12 +78,9 @@ const Role = () => {
                   <td>#</td>
 
                   <td>
-                    John Doe <br />
+                    <span className='badge bg-primary'> Admin </span>
                   </td>
 
-                  <td>
-                    <span className='badge bg-primary'>Admin</span>
-                  </td>
                   <td>2023-06-05 20:02:35</td>
                   <td className='text-center'>
                     <a className='btn btn-info btn-sm mx-1' href='#'>
@@ -100,50 +97,9 @@ const Role = () => {
                   <td>#</td>
 
                   <td>
-                    Alexander Pierce <br />
+                    <span className='badge bg-success'> User </span>
                   </td>
 
-                  <span className='badge bg-danger'>No Role :(</span>
-                  <td>2023-06-05 20:02:35</td>
-                  <td className='text-center'>
-                    <a className='btn btn-info btn-sm mx-1' href='#'>
-                      <i className='fas fa-pencil-alt mx-1'></i>
-                      Edit
-                    </a>
-                    <a className='btn btn-danger btn-sm' href='#'>
-                      <i className='fas fa-trash  mx-1'></i>
-                      Delete
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#</td>
-
-                  <td>
-                    Bob Doe <br />
-                  </td>
-
-                  <span className='badge bg-success '>User</span>
-                  <td>2023-06-05 20:02:35</td>
-                  <td className='text-center'>
-                    <a className='btn btn-info btn-sm mx-1' href='#'>
-                      <i className='fas fa-pencil-alt mx-1'></i>
-                      Edit
-                    </a>
-                    <a className='btn btn-danger btn-sm' href='#'>
-                      <i className='fas fa-trash  mx-1'></i>
-                      Delete
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#</td>
-
-                  <td>
-                    Mike Doe <br />
-                  </td>
-
-                  <span className='badge bg-danger'>No Role :(</span>
                   <td>2023-06-05 20:02:35</td>
                   <td className='text-center'>
                     <a className='btn btn-info btn-sm mx-1' href='#'>

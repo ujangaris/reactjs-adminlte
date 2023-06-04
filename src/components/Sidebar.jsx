@@ -69,7 +69,7 @@ const Sidebar = () => {
               </li>
               <li className='nav-item'>
                 <Link to='/users' className='nav-link'>
-                  <i className='nav-icon fas fa-user'></i>
+                  <i className='nav-icon fas fa-users'></i>
                   <p>User</p>
                 </Link>
               </li>

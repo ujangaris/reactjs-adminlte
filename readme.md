@@ -53,3 +53,23 @@
         - npm run dev
         - klik Role
             http://127.0.0.1:5173
+
+## Form Create User & Create Role
+
+    todo:
+
+    1.  App.jsx
+        - import dan pasang CretaeUser
+        - import dan pasang CretaeRole
+    2.  pages/user/CreateUser.jsx
+        - Form Create User
+    3.  pages/user/index.jsx
+        - Link to create user
+    4.  pages/role/CreateRole.jsx
+        - Form Create Role
+    5.  pages/role/index.jsx
+        - Link to create role
+    6.  pengujian pada browser:
+        - npm run dev
+        - klik Role
+            http://127.0.0.1:5173

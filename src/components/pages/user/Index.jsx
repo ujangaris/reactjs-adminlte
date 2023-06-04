@@ -29,12 +29,13 @@ const ListUser = () => {
         <div className='card'>
           <div className='card-header'>
             <div className='card-title'>
-              <button
+              <Link
+                to='/create-user'
                 type='button'
                 className='btn btn-block btn-success btn-sm'
               >
                 Add User <span className='fas fa-plus'></span>
-              </button>
+              </Link>
             </div>
 
             <div className='card-tools'>
@@ -111,7 +112,7 @@ const ListUser = () => {
                   <td>219</td>
                   <td>
                     Alexander Pierce <br />
-                    <span className='badge bg-primary'>user</span>
+                    <span className='badge bg-success'>user</span>
                   </td>
                   <td>
                     <img
@@ -148,7 +149,7 @@ const ListUser = () => {
                   <td>657</td>
                   <td>
                     Bob Doe <br />
-                    <span className='badge bg-primary'>user</span>
+                    <span className='badge bg-success'>user</span>
                   </td>
                   <td>
                     <img
@@ -185,7 +186,7 @@ const ListUser = () => {
                   <td>175</td>
                   <td>
                     Mike Doe <br />
-                    <span className='badge bg-primary'>user</span>
+                    <span className='badge bg-success'>user</span>
                   </td>
                   <td>
                     <img

@@ -32,9 +32,9 @@ const Dashboard = () => {
             <div className='col-lg-3 col-6'>
               {/* <!-- small box --> */}
               <div className='small-box bg-info'>
-                <div className='inner'>
+                <div className='inner text-center'>
                   <h3>150</h3>
-
+                  <span className='fas fa-users'></span>
                   <p>User Registration</p>
                 </div>
                 <div className='icon'>
@@ -49,9 +49,9 @@ const Dashboard = () => {
             <div className='col-lg-3 col-6'>
               {/* <!-- small box --> */}
               <div className='small-box bg-success'>
-                <div className='inner'>
+                <div className='inner text-center'>
                   <h3>2</h3>
-
+                  <span className='fas fa-key'></span>
                   <p>Role</p>
                 </div>
                 <div className='icon'>
@@ -155,7 +155,7 @@ const Dashboard = () => {
                   </td>
                   <td>
                     Alexander Pierce <br />
-                    <span className='badge bg-primary'>user</span>
+                    <span className='badge bg-success'>user</span>
                   </td>
 
                   <td>alex@gmail.com</td>
@@ -183,7 +183,7 @@ const Dashboard = () => {
                   </td>
                   <td>
                     Bob Doe <br />
-                    <span className='badge bg-primary'>user</span>
+                    <span className='badge bg-success'>user</span>
                   </td>
 
                   <td>bob@gmail.com</td>
@@ -211,7 +211,7 @@ const Dashboard = () => {
                   </td>
                   <td>
                     Mike Doe <br />
-                    <span className='badge bg-primary'>user</span>
+                    <span className='badge bg-success'>user</span>
                   </td>
 
                   <td>miki@gmail.com</td>
