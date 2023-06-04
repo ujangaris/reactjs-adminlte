@@ -8,12 +8,12 @@ const Sidebar = () => {
         {/* <!-- Brand Logo --> */}
         <a href='../../index3.html' className='brand-link'>
           <img
-            src='../../public/images/logo staterkit 2.png'
+            src='../../public/images/logo starterkit 3.png'
             alt='AdminLTE Logo'
             className='brand-image'
             // style={{ opacity: '.8' }}
           />
-          <span className='brand-text font-weight-light'>Stater Kit App</span>
+          <span className='brand-text font-weight-light'>Starter Kit App</span>
         </a>
 
         {/* <!-- Sidebar --> */}
