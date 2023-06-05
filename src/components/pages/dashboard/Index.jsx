@@ -13,7 +13,7 @@ const Dashboard = () => {
             {/* <!-- /.col --> */}
             <div className='col-sm-6'>
               <ol className='breadcrumb float-sm-right'>
-                <li className='breadcrumb-item active'>Dashboard</li>
+                <li className='breadcrumb-item active'>/</li>
               </ol>
             </div>
             {/* <!-- /.col --> */}

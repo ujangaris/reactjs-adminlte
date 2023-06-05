@@ -111,3 +111,12 @@
     2.  pengujian pada browser:
         - npm run dev : http://127.0.0.1:5173
         - klik Role -> klik button edit
+
+## Button Login, register, logout pada Navbar
+
+    todo:
+
+    1.  components/Navbar.jsx
+        - tambahkan code button, dan image
+    2.  pengujian pada browser:
+        - npm run dev : http://127.0.0.1:5173
