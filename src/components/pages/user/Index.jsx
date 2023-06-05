@@ -98,10 +98,14 @@ const ListUser = () => {
                       <i className='fas fa-eye mx-1'></i>
                       View
                     </a>
-                    <a className='btn btn-info btn-sm mx-1' href='#'>
+                    <Link
+                      to='/edit-user'
+                      className='btn btn-info btn-sm mx-1'
+                      href='#'
+                    >
                       <i className='fas fa-pencil-alt mx-1'></i>
                       Edit
-                    </a>
+                    </Link>
                     <a className='btn btn-danger btn-sm' href='#'>
                       <i className='fas fa-trash  mx-1'></i>
                       Delete
@@ -135,10 +139,14 @@ const ListUser = () => {
                       <i className='fas fa-eye mx-1'></i>
                       View
                     </a>
-                    <a className='btn btn-info btn-sm mx-1' href='#'>
+                    <Link
+                      to='/edit-user'
+                      className='btn btn-info btn-sm mx-1'
+                      href='#'
+                    >
                       <i className='fas fa-pencil-alt mx-1'></i>
                       Edit
-                    </a>
+                    </Link>
                     <a className='btn btn-danger btn-sm' href='#'>
                       <i className='fas fa-trash  mx-1'></i>
                       Delete
@@ -172,10 +180,14 @@ const ListUser = () => {
                       <i className='fas fa-eye mx-1'></i>
                       View
                     </a>
-                    <a className='btn btn-info btn-sm mx-1' href='#'>
+                    <Link
+                      to='/edit-user'
+                      className='btn btn-info btn-sm mx-1'
+                      href='#'
+                    >
                       <i className='fas fa-pencil-alt mx-1'></i>
                       Edit
-                    </a>
+                    </Link>
                     <a className='btn btn-danger btn-sm' href='#'>
                       <i className='fas fa-trash  mx-1'></i>
                       Delete
@@ -209,10 +221,14 @@ const ListUser = () => {
                       <i className='fas fa-eye mx-1'></i>
                       View
                     </a>
-                    <a className='btn btn-info btn-sm mx-1' href='#'>
+                    <Link
+                      to='/edit-user'
+                      className='btn btn-info btn-sm mx-1'
+                      href='#'
+                    >
                       <i className='fas fa-pencil-alt mx-1'></i>
                       Edit
-                    </a>
+                    </Link>
                     <a className='btn btn-danger btn-sm' href='#'>
                       <i className='fas fa-trash  mx-1'></i>
                       Delete

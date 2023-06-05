@@ -89,5 +89,15 @@
         - pasang ajax toggle bootstrap
         - styling untuk image
     3.  pengujian pada browser:
-        - npm run dev
+        - npm run dev : http://127.0.0.1:5173
         - klik User -> klik button add user
+
+## Form Edit User
+
+    todo:
+
+    1.  pages/user/EditUser.jsx
+        - copy paste dari CreateUser kemudian modifikasi
+    2.  pengujian pada browser:
+        - npm run dev : http://127.0.0.1:5173
+        - klik User -> klik button edit
