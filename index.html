@@ -12,6 +12,24 @@
     />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css" />
+    <!-- Toggle bootstrap -->
+    <link
+      href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .dropzone {
+        border: 2px dashed #ccc;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .dropzone.highlight {
+        border-color: #777;
+      }
+    </style>
+
     <!-- Theme style -->
     <link rel="stylesheet" href="/dist/css/adminlte.min.css" />
   </head>
@@ -22,9 +40,19 @@
     <script src="/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Toggle bootstrap -->
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <!-- <script src="/dist/js/demo.js"></script> -->
+    <script>
+      $(function () {
+        $('#toggle-two').bootstrapToggle({
+          on: 'Active',
+          off: 'Block',
+        })
+      })
+    </script>
   </body>
 </html>

@@ -73,3 +73,21 @@
         - npm run dev
         - klik Role
             http://127.0.0.1:5173
+
+## Form Create User Modification
+
+    todo:
+
+    1.  pages/user/CreateUser.jsx
+        - pasang toggle switch active/block
+            https://www.bootstraptoggle.com/
+        - useEffect drag & drop image
+        - preview image
+        - input image
+    2.  index.html
+        - pasang cdn toggle bootstrap
+        - pasang ajax toggle bootstrap
+        - styling untuk image
+    3.  pengujian pada browser:
+        - npm run dev
+        - klik User -> klik button add user
