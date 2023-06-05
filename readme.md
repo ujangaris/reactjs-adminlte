@@ -101,3 +101,13 @@
     2.  pengujian pada browser:
         - npm run dev : http://127.0.0.1:5173
         - klik User -> klik button edit
+
+## Form Edit Role
+
+    todo:
+
+    1.  pages/role/EditRole.jsx
+        - copy paste dari CreateRole kemudian modifikasi
+    2.  pengujian pada browser:
+        - npm run dev : http://127.0.0.1:5173
+        - klik Role -> klik button edit

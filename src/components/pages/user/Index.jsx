@@ -98,11 +98,7 @@ const ListUser = () => {
                       <i className='fas fa-eye mx-1'></i>
                       View
                     </a>
-                    <Link
-                      to='/edit-user'
-                      className='btn btn-info btn-sm mx-1'
-                      href='#'
-                    >
+                    <Link to='/edit-user' className='btn btn-info btn-sm mx-1'>
                       <i className='fas fa-pencil-alt mx-1'></i>
                       Edit
                     </Link>
@@ -139,11 +135,7 @@ const ListUser = () => {
                       <i className='fas fa-eye mx-1'></i>
                       View
                     </a>
-                    <Link
-                      to='/edit-user'
-                      className='btn btn-info btn-sm mx-1'
-                      href='#'
-                    >
+                    <Link to='/edit-user' className='btn btn-info btn-sm mx-1'>
                       <i className='fas fa-pencil-alt mx-1'></i>
                       Edit
                     </Link>
@@ -180,11 +172,7 @@ const ListUser = () => {
                       <i className='fas fa-eye mx-1'></i>
                       View
                     </a>
-                    <Link
-                      to='/edit-user'
-                      className='btn btn-info btn-sm mx-1'
-                      href='#'
-                    >
+                    <Link to='/edit-user' className='btn btn-info btn-sm mx-1'>
                       <i className='fas fa-pencil-alt mx-1'></i>
                       Edit
                     </Link>
@@ -221,11 +209,7 @@ const ListUser = () => {
                       <i className='fas fa-eye mx-1'></i>
                       View
                     </a>
-                    <Link
-                      to='/edit-user'
-                      className='btn btn-info btn-sm mx-1'
-                      href='#'
-                    >
+                    <Link to='/edit-user' className='btn btn-info btn-sm mx-1'>
                       <i className='fas fa-pencil-alt mx-1'></i>
                       Edit
                     </Link>

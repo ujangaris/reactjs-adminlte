@@ -83,10 +83,10 @@ const Role = () => {
 
                   <td>2023-06-05 20:02:35</td>
                   <td className='text-center'>
-                    <a className='btn btn-info btn-sm mx-1' href='#'>
+                    <Link to='/edit-role' className='btn btn-info btn-sm mx-1'>
                       <i className='fas fa-pencil-alt mx-1'></i>
                       Edit
-                    </a>
+                    </Link>
                     <a className='btn btn-danger btn-sm' href='#'>
                       <i className='fas fa-trash  mx-1'></i>
                       Delete
@@ -102,10 +102,10 @@ const Role = () => {
 
                   <td>2023-06-05 20:02:35</td>
                   <td className='text-center'>
-                    <a className='btn btn-info btn-sm mx-1' href='#'>
+                    <Link to='/edit-role' className='btn btn-info btn-sm mx-1'>
                       <i className='fas fa-pencil-alt mx-1'></i>
                       Edit
-                    </a>
+                    </Link>
                     <a className='btn btn-danger btn-sm' href='#'>
                       <i className='fas fa-trash  mx-1'></i>
                       Delete

@@ -9,6 +9,7 @@ import Role from './components/pages/role/Index'
 import CreateUser from './components/pages/user/CreateUser'
 import CreateRole from './components/pages/role/CreateRole'
 import EditUser from './components/pages/user/EditUser'
+import EditRole from './components/pages/role/EditRole'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path='/create-user' element={<CreateUser />} />
               <Route path='/edit-user' element={<EditUser />} />
               <Route path='/create-role' element={<CreateRole />} />
+              <Route path='/edit-role' element={<EditRole />} />
             </Routes>
 
             {/* <!-- /.content --> */}

@@ -66,7 +66,7 @@ const EditUser = () => {
                 <li className='breadcrumb-item'>
                   <Link to='/users'>User</Link>
                 </li>
-                <li className='breadcrumb-item active'>Add User</li>
+                <li className='breadcrumb-item active'>Edit User</li>
               </ol>
             </div>
           </div>
@@ -196,6 +196,9 @@ const EditUser = () => {
                   </div>
                   {/* <!-- /.card-body --> */}
                   <div className='card-footer'>
+                    <Link className='btn btn-secondary mx-1' to='/users'>
+                      <span className='fas fa-arrow-left'>Back</span>
+                    </Link>
                     <button type='submit' className='btn btn-primary'>
                       Update User
                     </button>
