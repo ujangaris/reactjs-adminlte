@@ -9,6 +9,8 @@ import EditUser from "./pages/user/EditUser";
 import CreateRole from "./pages/role/CreateRole";
 import EditRole from "./pages/role/EditRole";
 import ListUser from "./pages/user/Index";
+import { Register } from "./pages/auth/Register.jsx";
+import { Login } from "./pages/auth/Login.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -24,6 +26,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/edit-role" element={<EditRole />} />
           <Route path="/users" element={<ListUser />} />
         </Route>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
