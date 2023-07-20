@@ -1,39 +1,43 @@
-import { Route, Routes } from 'react-router-dom'
-import Wrapper from './components/Wrapper'
-import ListUser from './components/pages/user/Index'
-import Sidebar from './components/Sidebar'
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
-import Dashboard from './components/pages/dashboard/Index'
-import Role from './components/pages/role/Index'
-import CreateUser from './components/pages/user/CreateUser'
-import CreateRole from './components/pages/role/CreateRole'
-import EditUser from './components/pages/user/EditUser'
-import EditRole from './components/pages/role/EditRole'
+import Wrapper from "./components/Wrapper";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Wrapper>
-        <div className='wrapper'>
+        <div className="wrapper">
           <Navbar />
           {/* main side container */}
           <Sidebar />
           {/* akhir main side container */}
           {/* <!-- Content Wrapper. Contains page content --> */}
-          <div className='content-wrapper'>
+          <div className="content-wrapper">
             {/* <!-- Content Header (Page header) --> */}
-            <Routes>
-              <Route path='/' element={<Dashboard />} exact />
-              <Route path='/users' element={<ListUser />} />
-              <Route path='/Roles' element={<Role />} />
-              <Route path='/create-user' element={<CreateUser />} />
-              <Route path='/edit-user' element={<EditUser />} />
-              <Route path='/create-role' element={<CreateRole />} />
-              <Route path='/edit-role' element={<EditRole />} />
-            </Routes>
+            <div className="content-header">
+              <div className="container-fluid">
+                <div className="row mb-2">
+                  <div className="col-sm-6">
+                    <h1 className="m-0">Dashboard</h1>
+                  </div>
+                  {/* <!-- /.col --> */}
+                  <div className="col-sm-6">
+                    <ol className="breadcrumb float-sm-right">
+                      <li className="breadcrumb-item active">/</li>
+                    </ol>
+                  </div>
+                  {/* <!-- /.col --> */}
+                </div>
+                {/* <!-- /.row --> */}
+              </div>
+              {/* <!-- /.container-fluid --> */}
+            </div>
+            {/* <!-- /.content-header --> */}
 
-            {/* <!-- /.content --> */}
+            {/* <!-- Main content --> */}
+            <Outlet />
           </div>
           {/* <!-- /.content-wrapper --> */}
 
@@ -41,8 +45,10 @@ function App() {
           <Footer />
         </div>
       </Wrapper>
+
+      {/* <!-- /.content --> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
