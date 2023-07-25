@@ -12,7 +12,7 @@ export const Login = () => {
               </a>
             </div>
             <div className="card-body">
-              <p className="login-box-msg">Login User</p>
+              <p className="login-box-msg">Sign in to start your session</p>
 
               <form action="../../index.html" method="post">
                 <div className="input-group mb-3">

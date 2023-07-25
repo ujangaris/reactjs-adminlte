@@ -120,3 +120,22 @@
         - tambahkan code button, dan image
     2.  pengujian pada browser:
         - npm run dev : http://127.0.0.1:5173
+
+## Menampilkan data users dan roles
+
+    todo:
+
+    1.  install axios
+        - npm i axios
+    2.  pages/users/index.jsx
+        - import dan pasang useState, useEffect
+        - fetching data users dengan axios
+        - implementasi data users menggunakan map
+    3.  pages/users/index.jsx
+        - import dan pasang useState, useEffect
+        - fetching data roles dengan axios
+        - implementasi data roles menggunakan map
+    4.  pengujian pada browser:
+        - npm run dev : http://127.0.0.1:5173
+        - klik users menu
+        - klik roles menu

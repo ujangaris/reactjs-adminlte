@@ -1,22 +1,40 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Role = () => {
+  const [roles, setRoles] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/starter-api/v1/roles").then((res) => {
+      setRoles(res.data.data);
+      console.log(res.data.data);
+    });
+  }, []);
+  // Function to get the badge color based on the role name
+  const getBadgeColor = (roleName) => {
+    return roleName === "super_admin" ? "primary" : "success";
+  };
+  // Function to format the date in a human-readable format
+  const formatCreatedAt = (createdAt) => {
+    const date = new Date(createdAt);
+    return date.toLocaleString(); // You can customize the date format as per your preference
+  };
   return (
     <>
-      <div className='content-header'>
-        <div className='container-fluid'>
-          <div className='row mb-2'>
-            <div className='col-sm-6'>
-              <h1 className='m-0'>All Roles</h1>
+      <div className="content-header">
+        <div className="container-fluid">
+          <div className="row mb-2">
+            <div className="col-sm-6">
+              <h1 className="m-0">All Roles</h1>
             </div>
             {/* <!-- /.col --> */}
-            <div className='col-sm-6'>
-              <ol className='breadcrumb float-sm-right'>
-                <li className='breadcrumb-item'>
-                  <Link to='/'>Home</Link>
+            <div className="col-sm-6">
+              <ol className="breadcrumb float-sm-right">
+                <li className="breadcrumb-item">
+                  <Link to="/">Home</Link>
                 </li>
-                <li className='breadcrumb-item active'>Role</li>
+                <li className="breadcrumb-item active">Role</li>
               </ol>
             </div>
             {/* <!-- /.col --> */}
@@ -28,44 +46,44 @@ const Role = () => {
       {/* <!-- /.content-header --> */}
 
       {/* <!-- Main content --> */}
-      <section className='content'>
+      <section className="content">
         {/* <!-- /.container-fluid --> */}
-        <div className='card'>
-          <div className='card-header'>
-            <div className='card-title'>
+        <div className="card">
+          <div className="card-header">
+            <div className="card-title">
               <Link
-                to='/create-role'
-                type='button'
-                className='btn btn-block btn-success btn-sm'
+                to="/create-role"
+                type="button"
+                className="btn btn-block btn-success btn-sm"
               >
-                Add Role <span className='fas fa-plus'></span>
+                Add Role <span className="fas fa-plus"></span>
               </Link>
             </div>
 
-            <div className='card-tools'>
+            <div className="card-tools">
               <div
-                className='input-group input-group-sm'
-                style={{ width: '150px' }}
+                className="input-group input-group-sm"
+                style={{ width: "150px" }}
               >
                 <input
-                  type='text'
-                  name='table_search'
-                  className='form-control float-right'
-                  placeholder='Search'
+                  type="text"
+                  name="table_search"
+                  className="form-control float-right"
+                  placeholder="Search"
                 />
 
-                <div className='input-group-append'>
-                  <button type='submit' className='btn btn-default'>
-                    <i className='fas fa-search'></i>
+                <div className="input-group-append">
+                  <button type="submit" className="btn btn-default">
+                    <i className="fas fa-search"></i>
                   </button>
                 </div>
               </div>
             </div>
           </div>
           {/* <!-- /.card-header --> */}
-          <div className='card-body table-responsive p-0'>
-            <table className='table table-hover text-nowrap'>
-              <thead className='text-center'>
+          <div className="card-body table-responsive p-0">
+            <table className="table table-hover text-nowrap">
+              <thead className="text-center">
                 <tr>
                   <th>ID</th>
                   <th>Name</th>
@@ -73,73 +91,81 @@ const Role = () => {
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody className='text-center'>
-                <tr>
+              <tbody className="text-center">
+                {roles.map((role, index) => (
+                  <tr key={role.id_role}>
+                    <td>{index + 1}</td>
+
+                    <td>
+                      {/* Update the badge color based on the role name */}
+                      <span className={`badge bg-${getBadgeColor(role.name)}`}>
+                        {role.name}
+                      </span>
+                    </td>
+
+                    <td>{formatCreatedAt(role.created_at)}</td>
+                    <td className="text-center">
+                      <Link
+                        to="/edit-role"
+                        className="btn btn-info btn-sm mx-1"
+                      >
+                        <i className="fas fa-pencil-alt mx-1"></i>
+                        Edit
+                      </Link>
+                      <a className="btn btn-danger btn-sm" href="#">
+                        <i className="fas fa-trash  mx-1"></i>
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+                {/* <tr>
                   <td>#</td>
 
                   <td>
-                    <span className='badge bg-primary'> Admin </span>
+                    <span className="badge bg-success"> User </span>
                   </td>
 
                   <td>2023-06-05 20:02:35</td>
-                  <td className='text-center'>
-                    <Link to='/edit-role' className='btn btn-info btn-sm mx-1'>
-                      <i className='fas fa-pencil-alt mx-1'></i>
+                  <td className="text-center">
+                    <Link to="/edit-role" className="btn btn-info btn-sm mx-1">
+                      <i className="fas fa-pencil-alt mx-1"></i>
                       Edit
                     </Link>
-                    <a className='btn btn-danger btn-sm' href='#'>
-                      <i className='fas fa-trash  mx-1'></i>
+                    <a className="btn btn-danger btn-sm" href="#">
+                      <i className="fas fa-trash  mx-1"></i>
                       Delete
                     </a>
                   </td>
-                </tr>
-                <tr>
-                  <td>#</td>
-
-                  <td>
-                    <span className='badge bg-success'> User </span>
-                  </td>
-
-                  <td>2023-06-05 20:02:35</td>
-                  <td className='text-center'>
-                    <Link to='/edit-role' className='btn btn-info btn-sm mx-1'>
-                      <i className='fas fa-pencil-alt mx-1'></i>
-                      Edit
-                    </Link>
-                    <a className='btn btn-danger btn-sm' href='#'>
-                      <i className='fas fa-trash  mx-1'></i>
-                      Delete
-                    </a>
-                  </td>
-                </tr>
+                </tr> */}
               </tbody>
             </table>
           </div>
-          <div className='card-footer clearfix'>
-            <nav aria-label='Page navigation example '>
-              <ul className='pagination justify-content-end'>
-                <li className='page-item'>
-                  <a className='page-link' href='#'>
+          <div className="card-footer clearfix">
+            <nav aria-label="Page navigation example ">
+              <ul className="pagination justify-content-end">
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     Previous
                   </a>
                 </li>
-                <li className='page-item'>
-                  <a className='page-link' href='#'>
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     1
                   </a>
                 </li>
-                <li className='page-item'>
-                  <a className='page-link' href='#'>
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     2
                   </a>
                 </li>
-                <li className='page-item'>
-                  <a className='page-link' href='#'>
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     3
                   </a>
                 </li>
-                <li className='page-item'>
-                  <a className='page-link' href='#'>
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     Next
                   </a>
                 </li>
@@ -150,7 +176,7 @@ const Role = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Role
+export default Role;
