@@ -139,3 +139,42 @@
         - npm run dev : http://127.0.0.1:5173
         - klik users menu
         - klik roles menu
+
+## Create user
+
+    todo:
+
+    1.  pages/users/create.jsx
+        - deklarasi hooks untuk create user
+        - pasang handleSubmit
+        - implement form submit
+    2.  pengujian pada browser:
+        - npm run dev : http://127.0.0.1:5173
+        - klik users menu
+        - klik roles menu
+
+## Register user
+
+    todo:
+
+    1.  install rect spinner
+        - npm i react-spinners
+    2.  pages/auth/Register.jsx
+        - deklarasi hooks untuk register user
+        - pasang handleSubmit
+        - implement form submit
+        - buat kondisi Jika respons dari server berhasil dan status "CREATED",
+        - maka simpan ID pengguna ke local storage
+    3.  pages/auth/Activated.jsx
+        - import dan pasang Loading dari react-spinners
+        - deklarasi hooks isLoading
+        - import dan pasang useNavigate
+        - pasang useEffect untuk aktivasi user
+        - Remove id_user from localStorage
+        - implement pasang Loading
+    4.  main.js
+        - import dana pasang pages/auth/Activated
+    5.  pengujian pada browser:
+        - npm run dev : http://127.0.0.1:5173/register
+        - jika berhasil akan di redirect ke halaman activated, lalu kehalaman login
+          (tahap ini agar bisa menggunakan email sembarang, ketika featurnya sudah fix akan  ke email terlebih dahulu)

@@ -11,6 +11,7 @@ import EditRole from "./pages/role/EditRole";
 import ListUser from "./pages/user/Index";
 import { Register } from "./pages/auth/Register.jsx";
 import { Login } from "./pages/auth/Login.jsx";
+import { Activate } from "./pages/auth/Activate.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -28,6 +29,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/user/activate/:id" element={<Activate />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
