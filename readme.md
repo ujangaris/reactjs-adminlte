@@ -206,3 +206,48 @@
         - jika berhasil akan ada nitifikasi yang berisi informasi dari sweet alert
         - buka email yang terdaftar, akan ada kontak masuk dari aplikasi, klik link
         - akan di redirect kehalaman activated, tunggu beberapa saat lalu akan di redirect ke halaman login
+
+## Login & modifikasi code register & roles
+
+    todo:
+
+    1.  pages/services/baseUrlApi.jsx
+        - deklarasi dan export endpoint dari api
+    2.  pages/services/authApi.jsx
+        - import dan pasang baseUrlApi
+        - fetchLogin
+        - fetchRegister
+    3.  pages/auth/Login.jsx
+        - deklarasi hooks untuk email dan password
+        - deklarasai isLogin untuk logic animation button
+        - import dan pasang useNavigate
+        - import fetchLogin
+        - pasang handleSubmit
+        - Panggil fungsi fetchLogin untuk melakukan permintaan login ke backend
+        - Cek apakah login berhasil
+        - import dan pasang sweetalert2
+        - implementasi submit login
+    4.  pages/auth/Register.jsx
+        - modifikasi code
+        - State untuk kondisi animasi tombol
+        - import fetchRegister
+        - Panggil fungsi fetchRegister untuk melakukan permintaan register ke backend
+        - implement handleSubmit register
+    5.  pages/services/rolesApi.jsx
+        - import dan pasang baseUrlApi
+        - fetchRolesData
+    6.  pages/role/index.jsx
+        - modifikasi code
+        - pasang useNavigate
+        - import fetchRoleApi
+        - Ambil data roles dari server dengan fetchRoles
+        - tampung nilai token kedalam variable token
+        - pasang kondisi jika token tidak ada
+        - Ambil data roles dengan menggunakan access_token
+    7.  pengujian pada browser:
+        - npm run dev :
+            - http://127.0.0.1:5173/login
+            - http://127.0.0.1:5173/register
+        - jika berhasil akan ada nitifikasi yang berisi informasi dari sweet alert
+        - http://127.0.0.1:5173/roles
+            - data role akan tampil

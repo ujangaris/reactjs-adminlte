@@ -1,8 +1,7 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "animate.css";
+import { fetchRegister } from "../services/authApi";
 
 export const Register = () => {
   // deklarasi hooks untuk register user
@@ -10,46 +9,50 @@ export const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigate = useNavigate();
-
+ 
+  const [isRegistering, setIsRegistering] = useState(false); // State untuk kondisi animasi tombol
   // pasang handleSubmit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios
-      .post(`http://localhost:5000/starter-api/v1/register`, {
-        name,
-        username,
-        email,
-        password,
-      })
-      .then((res) => {
-        console.log(res);
-        if (res.data.status === "CREATED") {
-          // Jika respons dari server berhasil dan status "CREATED",
-          // maka simpan ID pengguna ke local storage
-          // const id_user = res.data.data.id_user;
-          // localStorage.setItem("id_user", id_user);
-          // alert("Created user successfully");
-
-          Swal.fire({
-            icon: "success",
-            timer: 3000,
-            title: "Register successfully",
-            text: "Please check your email to activated!",
-            showClass: {
-              popup: "animate__animated animate__fadeInDown",
-            },
-            hideClass: {
-              popup: "animate__animated animate__fadeOutUp",
-            },
-          });
-          // navigate(`/register`);
-        } else {
-          alert("Failed to create user");
-        }
-      })
-      .catch((err) => console.error(err));
+    setIsRegistering(true);
+    try {
+      // Panggil fungsi fetchRegister untuk melakukan permintaan register ke backend
+      const response = await fetchRegister(name, username, email, password);
+      if (response.status === "CREATED") {
+        // Jika respons dari server berhasil dan status "CREATED",
+        // maka tampilkan alert succes
+        Swal.fire({
+          icon: "success",
+          timer: 3000,
+          title: "Register successfully",
+          text: "Please check your email to activated!",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+      } else {
+        console.log("Failed to create user");
+      }
+    } catch (error) {
+      // Tangani error jika diperlukan
+      Swal.fire({
+        icon: "error",
+        timer: 3000,
+        title: "Failed to create user",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
+      console.error("Error during register:", error);
+    } finally {
+      setIsRegistering(false);
+    }
   };
   return (
     <>
@@ -130,7 +133,13 @@ export const Register = () => {
                   {/* <!-- /.col --> */}
                   <div className="col-12">
                     <button type="submit" className="btn btn-primary btn-block">
-                      Register
+                      {isRegistering ? (
+                        <>
+                          <span>Loading...</span>{" "}
+                        </>
+                      ) : (
+                        <span>Register</span>
+                      )}
                     </button>
                   </div>
                   {/* <!-- /.col --> */}

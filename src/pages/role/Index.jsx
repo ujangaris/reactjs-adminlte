@@ -1,16 +1,42 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { fetchRolesData } from "../services/rolesApi";
 
 const Role = () => {
   const [roles, setRoles] = useState([]);
+  // pasang useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/starter-api/v1/roles").then((res) => {
-      setRoles(res.data.data);
-      console.log(res.data.data);
-    });
-  }, []);
+    // Ambil data roles dari server
+    const fetchRoles = async () => {
+      try {
+        // tampung nilai token kedalam variable token
+        const token = localStorage.getItem("access_token");
+        if (!token) {
+          // Jika access_token tidak ada di localStorage, redirect ke halaman login
+          navigate("/login");
+          return;
+        }
+
+        // Ambil data roles dengan menggunakan access_token
+        const rolesData = await fetchRolesData(token);
+
+        // Periksa apakah pengguna diizinkan (super_admin atau admin)
+        if (rolesData.status === "OK") {
+          setRoles(rolesData.data);
+        } else {
+          // Jika pengguna tidak diizinkan, tampilkan pesan kesalahan atau atasi batasan akses
+          console.log("Anda tidak diizinkan untuk mengakses halaman ini");
+        }
+      } catch (error) {
+        // Tangani error jika diperlukan
+        console.error("Error fetching roles data:", error);
+      }
+    };
+
+    fetchRoles();
+  }, [navigate]);
   // Function to get the badge color based on the role name
   const getBadgeColor = (roleName) => {
     return roleName === "super_admin" ? "primary" : "success";
@@ -86,7 +112,7 @@ const Role = () => {
               <thead className="text-center">
                 <tr>
                   <th>ID</th>
-                  <th>Name</th>
+                  <th>Name Role</th>
                   <th>Created At</th>
                   <th>Action</th>
                 </tr>
