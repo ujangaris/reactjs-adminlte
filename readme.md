@@ -178,3 +178,31 @@
         - npm run dev : http://127.0.0.1:5173/register
         - jika berhasil akan di redirect ke halaman activated, lalu kehalaman login
           (tahap ini agar bisa menggunakan email sembarang, ketika featurnya sudah fix akan  ke email terlebih dahulu)
+
+## modifikasi code activated & memasang notifikasi sweet alert2
+
+    todo:
+
+    1.  install sweetalert2 & animatecss
+        - npm i sweetalert2 animate.css --save
+    2.  pages/auth/Register.jsx
+        - import dan pasang sweetalert2
+    3.  pages/auth/Register.jsx
+        - deklarasi hooks untuk email dan password
+        - import dan pasang useNavigate
+        - pasang handleSubmit
+        - Menyimpan data user ke localStorage
+        - implement handleSubmit
+    4.  pages/auth/Activated.jsx
+        - import dan pasang sweetalert2
+        - Lakukan tugas yang sesuai dengan aktivasi user
+        - Misalnya, menunggu beberapa detik sebagai contoh "aktivasi"
+        - Tugas ini bisa diganti dengan tugas asinkron lainnya sesuai kebutuhan
+        - dLakukan redirect ke halaman login setelah tampilan SweetAlert
+    5.  main.js
+        - import dana pasang pages/auth/Activated dengan path baru
+    6.  pengujian pada browser:
+        - npm run dev : http://127.0.0.1:5173/register
+        - jika berhasil akan ada nitifikasi yang berisi informasi dari sweet alert
+        - buka email yang terdaftar, akan ada kontak masuk dari aplikasi, klik link
+        - akan di redirect kehalaman activated, tunggu beberapa saat lalu akan di redirect ke halaman login

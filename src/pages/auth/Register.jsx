@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import "animate.css";
 
 export const Register = () => {
   // deklarasi hooks untuk register user
@@ -15,7 +17,7 @@ export const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:5000/starter-api/v1/user/create`, {
+      .post(`http://localhost:5000/starter-api/v1/register`, {
         name,
         username,
         email,
@@ -26,10 +28,23 @@ export const Register = () => {
         if (res.data.status === "CREATED") {
           // Jika respons dari server berhasil dan status "CREATED",
           // maka simpan ID pengguna ke local storage
-          const id_user = res.data.data.id_user;
-          localStorage.setItem("id_user", id_user);
-          alert("Created user successfully");
-          navigate(`/user/activate/${id_user}`);
+          // const id_user = res.data.data.id_user;
+          // localStorage.setItem("id_user", id_user);
+          // alert("Created user successfully");
+
+          Swal.fire({
+            icon: "success",
+            timer: 3000,
+            title: "Register successfully",
+            text: "Please check your email to activated!",
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
+          // navigate(`/register`);
         } else {
           alert("Failed to create user");
         }

@@ -1,32 +1,30 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loading from "react-spinners/HashLoader";
+import Swal from "sweetalert2";
 
 export const Activate = () => {
-  // deklarasi hooks isLoading
   const [isLoading, setIsLoading] = useState(true);
-  // pasang useNavigate
   const navigate = useNavigate();
-  // pasang useEffect untuk aktivasi user
+
   useEffect(() => {
-    const id_user = localStorage.getItem("id_user");
-    if (!id_user) {
+    // Lakukan tugas yang sesuai dengan aktivasi user
+    // Misalnya, menunggu beberapa detik sebagai contoh "aktivasi"
+    // Tugas ini bisa diganti dengan tugas asinkron lainnya sesuai kebutuhan
+    setTimeout(() => {
+      setIsLoading(false);
+
+      // Tampilkan SweetAlert untuk menunjukkan pesan sukses
+      Swal.fire({
+        title: "Success!",
+        text: "Akun berhasil diaktifkan.",
+        icon: "success",
+        confirmButtonText: "Ok",
+      });
+
+      // Lakukan redirect ke halaman login setelah tampilan SweetAlert
       navigate("/login");
-    } else {
-      axios
-        .patch(`http://localhost:5000/starter-api/v1/user/activate/${id_user}`)
-        .then((res) => {
-          setIsLoading(false);
-          console.log(res);
-          localStorage.removeItem("id_user"); // Remove id_user from localStorage
-          navigate("/login");
-        })
-        .catch((err) => {
-          setIsLoading(false);
-          console.error(err);
-        });
-    }
+    }, 2000); // Contoh: Menunggu 2 detik sebagai simulasi aktivasi
   }, [navigate]);
 
   if (isLoading) {

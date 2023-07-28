@@ -29,7 +29,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/user/activate/:id" element={<Activate />} />
+        <Route path="/user/activate" element={<Activate />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
