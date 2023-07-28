@@ -15,3 +15,23 @@ export const fetchRolesData = async (token) => {
     throw error;
   }
 };
+
+export const fetchAddRoleData = async (token, name) => {
+  try {
+    const response = await axios.post(
+      `${BASE_URL}/role/create`,
+      {
+        name,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching add role data:", error);
+    throw error;
+  }
+};

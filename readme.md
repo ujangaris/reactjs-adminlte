@@ -251,3 +251,29 @@
         - jika berhasil akan ada nitifikasi yang berisi informasi dari sweet alert
         - http://127.0.0.1:5173/roles
             - data role akan tampil
+
+## Create role
+
+    todo:
+
+    1.  pages/services/rolesApi.jsx
+        - export fetchAddRoleData
+    2.  pages/role/CreateRole.jsx
+        - deklarasi hooks role
+        - deklarasai isLogin untuk logic animation button
+        - import dan pasang useNavigate
+        - pasang handleSubmit
+        - tampung nilai token kedalam variable token
+        - buat kondisi jika token tidak ada
+        - import fetchAddRoleData
+        - Panggil fungsi fetchAddRoleData untuk melakukan permintaan login ke backend
+        - import dan pasang sweetalert2
+        - implementasi submit login
+        - implement setLoading
+    3.  pengujian pada browser:
+        - npm run dev :
+        - login sebagai super_user
+        - http://127.0.0.1:5173/roles
+            - klik button add role
+            - kemuidian create satu data
+            - jika berhasil akan ada nitifikasi success dan akan di redirect kehalaman all roles
